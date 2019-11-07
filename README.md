@@ -1,5 +1,5 @@
 # _S7_COM
-AutoIt Bibliothek für Siemens Step 7
+AutoIt Bibliothek für Siemens Step 7, für den Import / Export von Quelltexten und zum Erstellen von Hardwarekonfigurationen. Beispiele folgen noch.
 
 
 ### Simatic
