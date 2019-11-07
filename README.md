@@ -1,5 +1,6 @@
 # _S7_COM
-AutoIt Bibliothek für Siemens Step 7, für den Import / Export von Quelltexten und zum Erstellen von Hardwarekonfigurationen. Beispiele folgen noch.
+
+AutoIt-UDF für Siemens Step 7 API, für den Import / Export von Quelltexten und zum Erstellen von Hardwarekonfigurationen. Beispiele folgen noch.
 
 
 ### Simatic
