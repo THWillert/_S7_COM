@@ -3,11 +3,11 @@
 #Region Description
 ; ==============================================================================
 ; UDF ...........: FF.au3
-Global Const $_S7_AU3VERSION = "0.5.8"
+Global Const $_S7_AU3VERSION = "0.5.9"
 ; Description ...: An UDF for Simatic STEP autmation.
 ; Requirement ...: Simatic Step7 > V5.3 SP3 / MS-Excel (for the function: _S7_SymbolTable_ExportToExcel)
 ; Author(s) .....: Thorsten Willert
-; Date ..........: Tue Jan 21 22:27:46 CET 2014 @935 /Internet-Zeit/
+; Date ..........: 10.12.2019
 ; AutoIt Version : v3.3.8.1
 ; ==============================================================================
 #cs
@@ -175,11 +175,11 @@ EndFunc   ;==>_S7_Simatic_ObjCreate
 #cs
 	Hinweis
 	Die Kommando-Schnittstelle speichert auch bei AutomaticSave = False in folgenden Situationen:
-	·	Beim Beenden des Programms, das die Kommando-Schnittstelle verwendet
-	·	Beim Erzeugen oder Löschen von Projekten
-	·	Beim Erzeugen (auch Importieren) von Stationen
-	·	Vor Aufruf der Methoden Edit oder Compile.
-	Wenn mehrere Anwendungen (STEP 7-Anwendungen oder über Kommando-Schnittstelle) gleichzeitig auf
+	Â·	Beim Beenden des Programms, das die Kommando-Schnittstelle verwendet
+	Â·	Beim Erzeugen oder LÃ¶schen von Projekten
+	Â·	Beim Erzeugen (auch Importieren) von Stationen
+	Â·	Vor Aufruf der Methoden Edit oder Compile.
+	Wenn mehrere Anwendungen (STEPÂ 7-Anwendungen oder Ã¼ber Kommando-Schnittstelle) gleichzeitig auf
 	demselben Projekt arbeiten, darf AutomaticSave nicht ausgeschaltet werden.
 #ce
 Func _S7_Simatic_AutomaticSave(ByRef $oS7, $bSave = -1)
@@ -209,7 +209,7 @@ EndFunc   ;==>_S7_Simatic_GetSTEP7Language
 ;==============================================================================
 Func _S7_Simatic_Save(ByRef $oS7)
 	;Simatic.Save
-	$_S7_Function = "_S7_Simatic_GetSTEP7Language"
+	$_S7_Function = "_S7_Simatic_Save"
 	If Not IsObj($oS7) Then Return SetError($_S7_InvalidDataType, 1, 0)
 	$oS7.Save
 	Return SetError($_S7_Success, 0, 1)
@@ -229,7 +229,7 @@ EndFunc   ;==>_S7_Simatic_SetPGInterface
 ;==============================================================================
 Func _S7_Simatic_MsgAssignmentType(ByRef $oS7, $iMode)
 	;Simatic.MsgAssignmentType
-	$_S7_Function = "_S7_Simatic_SetPGInterface"
+	$_S7_Function = "_S7_Simatic_MsgAssignmentType"
 	If Not IsObj($oS7) Then Return SetError($_S7_InvalidDataType, 1, 0)
 	$iMode = Int($iMode)
 	Switch $iMode
@@ -244,12 +244,12 @@ EndFunc   ;==>_S7_Simatic_MsgAssignmentType
 #cs
 	UnattendedServerMode
 
-	Wenn die Eigenschaft gesetzt ist (=TRUE), dann werden alle Meldungen unterdrückt,
-	also auch die, für die Sie keine automatische Antwort in der Registry hinterlegt haben.
-	In diesem Fall wird die Meldung automatisch mit der vorselektierten Schaltfläche, z. B. "Nein", quittiert.
-	Die Folge ist, dass die Meldung falsch quittiert werden kann. Sie dürfen die Eigenschaft
-	nur dann auf "TRUE" setzen, wenn das Programm auf keinen Fall "hängen" bleiben darf und
-	dafür eine falsche Quittierung in Kauf genommen werden kann.
+	Wenn die Eigenschaft gesetzt ist (=TRUE), dann werden alle Meldungen unterdrÃ¼ckt,
+	also auch die, fÃ¼r die Sie keine automatische Antwort in der Registry hinterlegt haben.
+	In diesem Fall wird die Meldung automatisch mit der vorselektierten SchaltflÃ¤che, z. B. "Nein", quittiert.
+	Die Folge ist, dass die Meldung falsch quittiert werden kann. Sie dÃ¼rfen die Eigenschaft
+	nur dann auf "TRUE" setzen, wenn das Programm auf keinen Fall "hÃ¤ngen" bleiben darf und
+	dafÃ¼r eine falsche Quittierung in Kauf genommen werden kann.
 #ce
 Func _S7_Simatic_UnattendedServerMode(ByRef $oS7, $bMode = False)
 	$_S7_Function = "_S7_Simatic_UnattendedServerMode"
@@ -265,14 +265,14 @@ EndFunc   ;==>_S7_Simatic_UnattendedServerMode
 #cs
 	VerbLogFile
 
-	Pfadname einer Protokolldatei (Log-Datei). In dieser Datei werden die während der Compile-Aufrufe
-	anfallenden Meldungen (die z. B. im Fehlerfenster des Editors angezeigt würden) protokolliert.
-	Wenn für VerbLogFile ein String (d. h. ein gültiger Pfad) eingesetzt ist, wird implizit der Silent Mode
+	Pfadname einer Protokolldatei (Log-Datei). In dieser Datei werden die wÃ¤hrend der Compile-Aufrufe
+	anfallenden Meldungen (die z. B. im Fehlerfenster des Editors angezeigt wÃ¼rden) protokolliert.
+	Wenn fÃ¼r VerbLogFile ein String (d. h. ein gÃ¼ltiger Pfad) eingesetzt ist, wird implizit der Silent Mode
 	angefordert. Im Silent-Mode erscheint bei Operationen wie "Compile" kein sichtbares, vom Anwender
-	manuell zu schließendes Applikationsfenster mehr.
+	manuell zu schlieÃŸendes Applikationsfenster mehr.
 	Durch Setzen auf den Leerstring wird der Silent Mode wieder deaktiviert.
 
-	Wenn die Dienst-erbringende Komponente diesen Mechanismus nicht unterstützt, wird wie gewohnt das
+	Wenn die Dienst-erbringende Komponente diesen Mechanismus nicht unterstÃ¼tzt, wird wie gewohnt das
 	Fehlerfenster des Editors aufgerufen.
 #ce
 Func _S7_Simatic_VerbLogFile(ByRef $oS7, $sFile = "")
