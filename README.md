@@ -1,9 +1,12 @@
 # _S7_COM
 
+### Übersicht
+
 AutoIt-UDF für Siemens Step 7 API, für den Import / Export von Quelltexten und zum Erstellen von Hardwarekonfigurationen. Beispiele folgen noch.
 
+### Funktionen
 
-### Simatic
+#### Simatic
 Simatic.Simatic.1
 -	OBJ 	_S7_Simatic_ObjCreate / Simatic = Simatic.Simatic.1
 -	BOOL 	_S7_Simatic_AutomaticSave / Simatic.AutomaticSave (Read / Write)
@@ -15,7 +18,7 @@ Simatic.Simatic.1
 -	_S7_Simatic_Save / Simatic.Save (void)
 -	HRESULT _S7_Simatic_GetSTEP7Language / Simatic.GetSTEP7Language (Read) ??? funktioniert nicht mit AutoIt
 
-### Projects
+#### Projects
 Simatic.Projects
 -	OBJ 	_S7_Projects_GetProject
 -	BOOL 	_S7_Projects_Exists
@@ -23,7 +26,7 @@ Simatic.Projects
 -	Int 	_S7_Projects_Count
 -	BOOL 	_S7_Projects_Add
 
-### Project
+#### Project
 Simatic.Projects.Project
 -	Array 	_S7_Project_GetInfo
 -	_S7_Project_Name
@@ -31,7 +34,7 @@ Simatic.Projects.Project
 -	String	_S7_Project_Comment (Read / Write)
 -	Bool 	_S7_Project_Remove
 
-### Stations
+#### Stations
 Simatic.Projects.Project.Stations
 -	OBJ 	_S7_Stations_GetStation
 -	Bool	_S7_Stations_Exists
@@ -41,18 +44,55 @@ Simatic.Projects.Project.Stations
 -	Bool	_S7_Stations_Add
 - Bool	_S7_Stations_Remove
 
-### Programs
+#### Programs
 Simatic.Projects.Project.Programs
 -	Array 	_S7_Programs_GetList
 
-### Blocks
+#### Blocks
 Simatic.Projects.Project.Programs.Next("Blocks")
 -	OBJ	_S7_Blocks_GetBlock
 
-### Source Files
+#### Source Files
 Simatic.Projects.Project.Programs.Next("Source Files")
 -	OBJ	_S7_SourceFiles_GetSource
 -	Bool	_S7_SourceFiles_Export
 -	Bool	_S7_SourceFiles_Add
 -	Bool	_S7_SourceFiles_Compile
 -	Array	_S7_SourceFiles_GetInfo
+
+
+### Voraussetzungen
+
+AutoIt
+
+Siemens Step 7 V5.x
+
+
+### Installation
+
+Die UDF in das Include Verzeichnis von AutoIt kopieren.
+
+
+### Weiterführende Informationen
+
+...
+
+
+### Diskusion und Vorschläge
+
+...
+
+## ToDo
+
+- [ ] Beispiele
+- [ ] Beschreibung der Funktionen
+
+
+## Author
+Thorsten Willert
+
+[Homepage](http://www.thorsten-willert.de/)
+
+## Lizenz
+Das ganze steht unter der [Apache 2.0](https://github.com/THWillert/HomeMatic_CSS/blob/master/LICENSE) Lizenz
+.
