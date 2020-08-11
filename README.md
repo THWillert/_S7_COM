@@ -4,6 +4,9 @@
 
 AutoIt-UDF für Siemens Step 7 API, für den Import / Export von Quelltexten und zum Erstellen von Hardwarekonfigurationen. Beispiele folgen noch.
 
+Zur einfachen Hardware-Konfiguration damit, gibt es eine weitere AutoIt-UDF:
+[_S7_HW_Config](https://github.com/THWillert/_S7_HW_Config)
+
 ## Funktionen
 
 ### Simatic
@@ -75,7 +78,7 @@ Die UDF in das Include Verzeichnis von AutoIt kopieren.
 
 ## Weiterführende Informationen
 
-...
+Hardware-Konfiguration: [_S7_HW_Config](https://github.com/THWillert/_S7_HW_Config)
 
 
 ## Diskusion und Vorschläge
