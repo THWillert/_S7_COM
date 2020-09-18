@@ -94,7 +94,7 @@ Hardware-Konfiguration: [_S7_HW_Config](https://github.com/THWillert/_S7_HW_Conf
 ## Author
 Thorsten Willert
 
-[Homepage](http://www.thorsten-willert.de/)
+[Homepage](https://www.thorsten-willert.de/software/autoit/autoit-udfs/s7-com)
 
 
 ## Lizenz
